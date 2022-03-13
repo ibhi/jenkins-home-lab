@@ -17,8 +17,10 @@ services:
       - type: volume
         source: jenkins-data
         target: /var/jenkins_home
-    ports:
-      - 2376:2376
+    expose:
+      - 2376
+    # ports:
+    #   - 2375:2375
 
   jenkins-blueocean:
     build: ./jenkins
@@ -30,7 +32,7 @@ services:
       - DOCKER_CERT_PATH=/certs/client
       - DOCKER_TLS_VERIFY=1
     ports:
-      - 8080:8080
+      - 80:8080
       - 50000:50000
     volumes:
       - jenkins-data:/var/jenkins_home
