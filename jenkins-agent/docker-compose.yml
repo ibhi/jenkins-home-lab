@@ -14,6 +14,9 @@ services:
       - type: volume
         source: jenkins-docker-certs
         target: /certs/client
+      - type: volume
+        source: jenkins-data
+        target: /var/jenkins_home
     expose:
       - 2376
     # ports:
@@ -32,6 +35,7 @@ services:
     ports:
       - "2222:22"
     volumes:
+      - jenkins-data:/var/jenkins_home
       - jenkins-docker-certs:/certs/client:ro
 
 networks:
@@ -39,3 +43,4 @@ networks:
 
 volumes:
   jenkins-docker-certs:
+  jenkins-data:
