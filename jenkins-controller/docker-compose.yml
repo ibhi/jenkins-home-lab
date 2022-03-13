@@ -19,8 +19,8 @@ services:
         target: /var/jenkins_home
     expose:
       - 2376
-    # ports:
-    #   - 2375:2375
+    ports:
+      - 2376:2376
 
   jenkins-blueocean:
     build: ./
