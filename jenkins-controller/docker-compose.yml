@@ -23,7 +23,7 @@ services:
     #   - 2375:2375
 
   jenkins-blueocean:
-    build: ./jenkins
+    build: ./
     container_name: jenkins-blueocean
     networks:
       jenkins:
