@@ -23,7 +23,7 @@ services:
     #   - 2375:2375
 
   jenkins-ssh-agent:
-    build: ./
+    build: ./ssh-agent
     container_name: jenkins-ssh-agent
     networks:
       jenkins:
