@@ -19,6 +19,7 @@ services:
         target: /home/jenkins
     expose:
       - 2376
+    restart: unless-stopped
     # ports:
     #   - 2375:2375
 
@@ -37,6 +38,7 @@ services:
     volumes:
       - jenkins-data:/home/jenkins
       - jenkins-docker-certs:/certs/client:ro
+    restart: unless-stopped
 
 networks:
   jenkins:
